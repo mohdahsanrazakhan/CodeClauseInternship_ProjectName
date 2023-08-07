@@ -21,7 +21,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: var(--main-bg-dark);
+  background: var(--main-bg-light);
   font-family: 'Inter', sans-serif;
 }
 
