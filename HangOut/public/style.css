@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&family=Great+Vibes&family=IBM+Plex+Mono&family=IBM+Plex+Sans&family=Inter:wght@400;600;700&family=Noto+Serif+Makasar&family=Open+Sans&family=Outfit&family=PT+Mono&family=Poppins:ital,wght@0,400;0,700;1,400;1,800&family=Roboto&family=Roboto+Slab:wght@400;600;800&family=Source+Code+Pro&family=Tilt+Prism&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-dark: rgb(26, 24, 53);
+  --main-bg-light: rgb(248, 248, 248);
+  --chat-bg-light: rgb(255, 255, 255);
+  --brand-bg-light: rgb(241, 241, 241);
+  --textarea-bg-light: rgb(251, 251, 251);
+  --incoming-bg-light: rgb(143, 136, 232);
+  --outgoing-bg-light: rgb(233, 234, 253);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--main-bg-dark);
+  font-family: 'Inter', sans-serif;
+}
+
+section.chat__section {
+  width: 800px;
+  max-width: 90%;
+  background: var(--chat-bg-light);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.brand {
+  font-family: 'Source Code Pro', monospace;
+  padding: 20px;
+  background: var(--brand-bg-light);
+  display: flex;
+  align-items: center;
+}
+
+.brand h1 {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #444;
+  margin-left: 10px;
+}
+
+.brand #auto-type {
+  color: #787986;
+}
+
+.message__area {
+  height: 500px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-top: 40px;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  padding: 20px;
+  font-size: 16px;
+  outline: none;
+  background: var(--textarea-bg-light);
+}
+
+.message {
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  max-width: 300px;
+  position: relative;
+}
+
+.incoming {
+  background: var(--incoming-bg-light);
+  color: #fff;
+  width: fit-content;
+}
+
+.outgoing {
+  background: var(--outgoing-bg-light);
+  counter-reset: #787986;
+  margin-left: auto;
+}
+
+.message h4 {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: #333;
+  font-size: 14px;
+}

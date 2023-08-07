@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HangOut - Chat App</title>
+  <link rel="shortcut icon" href="assets/hangout-logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <section class="chat__section">
+    <div class="brand">
+      <img height="50" src="assets/hangout-logo.png" alt="logo">
+      <h1>HangOut: <span id="auto-type"></span></h1>
+    </div>
+    <div class="message__area"></div>
+
+    <div>
+      <textarea id="textarea" rows="1" placeholder="Write a message..."></textarea>
+    </div>
+  </section>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#auto-type', {
+      strings: ['Connect Globally!', 'Chat Worldwide!', 'All Together in One Place!', 'Connect Everyone Worldwide in One Place!'],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true,
+    });
+  </script>
+</body>
+
+</html>
