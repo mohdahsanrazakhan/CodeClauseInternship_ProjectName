@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPlay</title>
+  <link rel="shortcut icon" href="music.svg" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg">
+
+  <main>
+    <!-- Player Section -->
+    <section class="bg-[#F8F6F4]/75 border-2 border-[#fff] sm:m-10 m-5 p-10 rounded-xl">
+      <div class="flex flex-col sm:flex-row justify-start items-center gap-5">
+        <img class="w-36 h-36 song-banner" src="music.svg" alt="music-logo">
+        <div class="flex justify-center items-end gap-5">
+          <h1 id="masterSongName" class="text-4xl sm:text-none text-center font-semibold">Warriyo
+          </h1>
+          <img class="opacity-0" src="equalizer.gif" width="55px" id="gif" alt="">
+        </div>
+      </div>
+      <div class="flex sm:flex-row flex-col justify-center items-center mt-5">
+        <div class="flex justify-center items-center">
+
+          <!-- prev -->
+          <div id="prev-button" class="hover:bg-gray-200 rounded-full p-3 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-prev-filled"
+              width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M20.341 4.247l-8 7a1 1 0 0 0 0 1.506l8 7c.647 .565 1.659 .106 1.659 -.753v-14c0 -.86 -1.012 -1.318 -1.659 -.753z"
+                stroke-width="0" fill="currentColor"></path>
+              <path
+                d="M9.341 4.247l-8 7a1 1 0 0 0 0 1.506l8 7c.647 .565 1.659 .106 1.659 -.753v-14c0 -.86 -1.012 -1.318 -1.659 -.753z"
+                stroke-width="0" fill="currentColor"></path>
+            </svg>
+          </div>
+          <!-- play -->
+          <div id="play-button" class="hover:bg-gray-200 rounded-full p-3 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="32"
+              height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"
+                stroke-width="0" fill="currentColor"></path>
+            </svg>
+          </div>
+          <!-- next -->
+          <div id="next-button" class="hover:bg-gray-200 rounded-full p-3 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-next-filled"
+              width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M2 5v14c0 .86 1.012 1.318 1.659 .753l8 -7a1 1 0 0 0 0 -1.506l-8 -7c-.647 -.565 -1.659 -.106 -1.659 .753z"
+                stroke-width="0" fill="currentColor"></path>
+              <path
+                d="M13 5v14c0 .86 1.012 1.318 1.659 .753l8 -7a1 1 0 0 0 0 -1.506l-8 -7c-.647 -.565 -1.659 -.106 -1.659 .753z"
+                stroke-width="0" fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="w-full flex justify-center items-center gap-2 sm:ml-10">
+          <!-- <span id="start-time">00:00</span> -->
+          <input class="w-full h-2 bg-gray-200 rounded-lg cursor-pointer accent-gray-500" type="range" value="0"
+            id="songProgressBar">
+          <!-- <span id="end-time">00:00</span> -->
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <h1 class="sm:m-10 m-5 text-3xl font-semibold">Top 5 NCS - (No Copyright Sounds)</h1>
+    <!-- Music List -->
+    <section id="musicList" class="bg-[#F8F6F4]/75 border-2 border-[#fff] sm:m-10 m-5 sm:p-10 p-5 rounded-xl">
+      <div class="songItem flex justify-start items-center gap-5 py-3 px-3 rounded-lg hover:bg-gray-200 border-b-2">
+        <img class="w-16 h-16 object-cover rounded-xl" alt="1">
+        <span class="text-2xl font-semibold capitalize mr-auto songName">Song Title</span>
+        <span class="songlistplay flex justify-center items-center gap-3"> <i id="0"
+            class="far fa-2x songItemPlay cursor-pointer fa-play-circle"></i>
+        </span>
+      </div>
+      <div class="songItem flex justify-start items-center gap-5 py-3 px-3 rounded-lg hover:bg-gray-200 border-b-2">
+        <img class="w-16 h-16 object-cover rounded-xl" alt="1">
+        <span class="text-2xl font-semibold capitalize mr-auto songName">Song Title</span>
+        <span class="songlistplay flex justify-center items-center gap-3"> <i id="1"
+            class="far fa-2x songItemPlay cursor-pointer fa-play-circle"></i>
+        </span>
+      </div>
+      <div class="songItem flex justify-start items-center gap-5 py-3 px-3 rounded-lg hover:bg-gray-200 border-b-2">
+        <img class="w-16 h-16 object-cover rounded-xl" alt="1">
+        <span class="text-2xl font-semibold capitalize mr-auto songName">Song Title</span>
+        <span class="songlistplay flex justify-center items-center gap-3"> <i id="2"
+            class="far fa-2x songItemPlay cursor-pointer fa-play-circle"></i>
+        </span>
+      </div>
+      <div class="songItem flex justify-start items-center gap-5 py-3 px-3 rounded-lg hover:bg-gray-200 border-b-2">
+        <img class="w-16 h-16 object-cover rounded-xl" alt="1">
+        <span class="text-2xl font-semibold capitalize mr-auto songName">Song Title</span>
+        <span class="songlistplay flex justify-center items-center gap-3"> <i id="1"
+            class="far fa-2x songItemPlay cursor-pointer fa-play-circle"></i>
+        </span>
+      </div>
+      <div class="songItem flex justify-start items-center gap-5 py-3 px-3 rounded-lg hover:bg-gray-200">
+        <img class="w-16 h-16 object-cover rounded-xl" alt="1">
+        <span class="text-2xl font-semibold capitalize mr-auto songName">Song Title</span>
+        <span class="songlistplay flex justify-center items-center gap-3"> <i id="2"
+            class="far fa-2x songItemPlay cursor-pointer fa-play-circle"></i>
+        </span>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
